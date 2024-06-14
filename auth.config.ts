@@ -1,4 +1,4 @@
-import type { NextAuthConfig } from 'next-auth';
+// import {  } from 'next-auth';
 
 import Credentials from 'next-auth/providers/credentials';
 import { getUserByEmail } from '@/data/user';
@@ -31,4 +31,4 @@ export default {
       },
     }),
   ],
-} satisfies NextAuthConfig;
+};
