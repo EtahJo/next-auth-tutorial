@@ -17,13 +17,13 @@ declare module 'next-auth' {
     } & DefaultSession['user'];
   }
 }
-declare module 'next-auth/jwt' {
-  /** Returned by the `jwt` callback and `auth`, when using JWT sessions */
-  interface JWT {
-    /** OpenID ID Token */
-    role?: 'ADMIN' | 'USER';
-  }
-}
+// declare module 'next-auth/jwt' {
+//   /** Returned by the `jwt` callback and `auth`, when using JWT sessions */
+//   interface JWT {
+//     /** OpenID ID Token */
+//     role?: 'ADMIN' | 'USER';
+//   }
+// }
 
 export const { auth, handlers, signIn, signOut } = NextAuth({
   pages: {
