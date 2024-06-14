@@ -1,4 +1,4 @@
-// import {  } from 'next-auth';
+import type { NextAuthConfig } from 'next-auth';
 
 import Credentials from 'next-auth/providers/credentials';
 import { getUserByEmail } from '@/data/user';
@@ -6,9 +6,6 @@ import { LoginSchema } from '@/schemas/index';
 import bcrypt from 'bcryptjs';
 import Github from 'next-auth/providers/github';
 import Google from 'next-auth/providers/google';
-
-// const Google = (arg: any) => import('next-auth/providers/google');
-// const GitHub = (arg: any) => import('next-auth/providers/github');
 
 export default {
   providers: [
@@ -34,4 +31,4 @@ export default {
       },
     }),
   ],
-};
+} satisfies NextAuthConfig;
