@@ -8,8 +8,10 @@ import {
   publicRoutes,
 } from '@/routes';
 
+import type { NextRequest } from 'next/server';
+
 export const { auth } = NextAuth(authConfig);
-export default auth((req) => {
+export default auth((req: NextRequest) => {
   const { nextUrl } = req;
   const isLoggedIn = !!req.auth;
   const isApiAuthRoute = nextUrl.pathname.startsWith(apiAuthPrefix);
