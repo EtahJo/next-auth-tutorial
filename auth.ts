@@ -81,7 +81,7 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
       }
       if (session.user) {
         session.user.name = token.name;
-        session.user.email = token.email;
+        session.user.email = token.email as string;
         session.user.isOAuth = token.isOAuth as boolean;
       }
       return session;
@@ -93,8 +93,8 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
       const existineAccount = await getAccountByUserId(existingUser.id);
 
       token.isOAuth = !!existineAccount;
-      token.name = existingUser.name;
-      token.email = existingUser.email;
+      token.name = existingUser.name as string;
+      token.email = existingUser.email as string;
       token.role = existingUser.role;
       token.isTwoFactorEnabled = existingUser.isTwoFactorEnabled;
 
