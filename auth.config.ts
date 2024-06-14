@@ -7,6 +7,9 @@ import bcrypt from 'bcryptjs';
 import Github from 'next-auth/providers/github';
 import Google from 'next-auth/providers/google';
 
+// const Google = (arg: any) => import('next-auth/providers/google');
+// const GitHub = (arg: any) => import('next-auth/providers/github');
+
 export default {
   providers: [
     Github({

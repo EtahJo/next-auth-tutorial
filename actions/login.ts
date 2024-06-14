@@ -11,6 +11,10 @@ import { sendVerificationEmail, sendTwoFactorTokenEmail } from '@/lib/mail';
 import { db } from '@/lib/db';
 import { getTwoFactorConifrmationByUserId } from '@/data/two-factor-confirmation';
 
+// const AuthError = dynamic(({ AuthError }) => import('next-auth'));
+
+// const {AuthError}= next_auth
+
 export const login = async (
   values: z.infer<typeof LoginSchema>,
   callbackUrl?: string | null
