@@ -1,5 +1,5 @@
 import authConfig from '@/auth.config';
-import NextAuth, { NextAuthRequest } from 'next-auth';
+import NextAuth from 'next-auth';
 
 import {
   DEFAULT_LOGIN_REDIRECT,
@@ -9,7 +9,7 @@ import {
 } from '@/routes';
 
 export const { auth } = NextAuth(authConfig);
-export default auth((req: NextAuthRequest) => {
+export default auth((req) => {
   const { nextUrl } = req;
   const isLoggedIn = !!req.auth;
   const isApiAuthRoute = nextUrl.pathname.startsWith(apiAuthPrefix);
